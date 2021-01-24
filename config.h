@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font = "Fira Code:pixelsize=20:antialias=true:autohint=true";
+static int borderpx = 50;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -94,32 +94,36 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
+
+/*
+* base16-solarflare-theme.h
+*
+* Base16: (https://github.com/chriskempson/base16)
+*
+* Authors:
+*
+* Scheme: Chuck Harmston (https://chuck.harmston.ch)
+* Template: Honza Pokorny <me@honza.ca>
+*
+*/
+
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
-
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
-
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+  "#18262f", /* base00 */
+  "#ef5253", /* base08 */
+  "#7cc844", /* base0B */
+  "#e4b51c", /* base0A */
+  "#33b5e1", /* base0D */
+  "#a363d5", /* base0E */
+  "#52cbb0", /* base0C */
+  "#a6afb8", /* base05 */
+  "#667581", /* base03 */
+  "#e66b2b", /* base09 */
+  "#222e38", /* base01 */
+  "#586875", /* base02 */
+  "#85939e", /* base04 */
+  "#e8e9ed", /* base06 */
+  "#d73c9a", /* base0F */
+  "#f5f7fa", /* base07 */
 };
 
 
@@ -129,8 +133,8 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 7;
 unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+static unsigned int defaultcs = 13;
+static unsigned int defaultrcs = 0;
 
 /*
  * Default shape of cursor
@@ -174,11 +178,8 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
-	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
-	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
-	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
-	{ ShiftMask,            Button5, ttysend,        {.s = "\033[6;2~"} },
-	{ XK_ANY_MOD,           Button5, ttysend,        {.s = "\005"} },
+	{ XK_NO_MOD,           Button4,	kscrollup,		{.i = -1} },
+	{ XK_NO_MOD,           Button5,	kscrolldown,	{.s = -1} },
 };
 
 /* Internal keyboard shortcuts. */
