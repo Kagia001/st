@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Fira Code:pixelsize=20:antialias=true:autohint=true";
+static char *font = "FiraCode Nerd Font:pixelsize=18:antialias=true:autohint=true";
 static int borderpx = 50;
 
 /*
@@ -108,32 +108,36 @@ unsigned int tabspaces = 8;
 */
 
 static const char *colorname[] = {
-  "#18262f", /* base00 */
-  "#ef5253", /* base08 */
-  "#7cc844", /* base0B */
-  "#e4b51c", /* base0A */
-  "#33b5e1", /* base0D */
-  "#a363d5", /* base0E */
-  "#52cbb0", /* base0C */
-  "#a6afb8", /* base05 */
-  "#667581", /* base03 */
-  "#e66b2b", /* base09 */
-  "#222e38", /* base01 */
-  "#586875", /* base02 */
-  "#85939e", /* base04 */
-  "#e8e9ed", /* base06 */
-  "#d73c9a", /* base0F */
-  "#f5f7fa", /* base07 */
+  "#282c34",
+  "#E06C75",
+  "#98C379",
+  "#E5C07B",
+  "#61AFEF",
+  "#C678DD",
+  "#56B6C2",
+  "#ABB2BF",
+
+  "#4b5263",
+  /*"#3E4452",*/
+  "#BE5046",
+  "#98C379",
+  "#D19A66",
+  "#61AFEF",
+  "#C678DD",
+  "#56B6C2",
+  "#ABB2BF"
 };
+
 
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
+
 unsigned int defaultfg = 7;
 unsigned int defaultbg = 0;
-static unsigned int defaultcs = 13;
+static unsigned int defaultcs = 7;
 static unsigned int defaultrcs = 0;
 
 /*
@@ -143,7 +147,7 @@ static unsigned int defaultrcs = 0;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 6;
 
 /*
  * Default columns and rows numbers
