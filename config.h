@@ -5,7 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FiraCode Nerd Font:pixelsize=18:antialias=true:autohint=true";
+static char *font = "Fira Code:pixelsize=18:antialias=true:autohint=true";
+/*static char *font2[] = { "FiraCode Nerd Font:pixelsize=18:antialias=true:autohint=true" };
+ */
 static int borderpx = 50;
 
 /*
@@ -96,36 +98,55 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 
 /*
-* base16-solarflare-theme.h
-*
-* Base16: (https://github.com/chriskempson/base16)
-*
-* Authors:
-*
-* Scheme: Chuck Harmston (https://chuck.harmston.ch)
-* Template: Honza Pokorny <me@honza.ca>
-*
-*/
+  Black
+  Red
+  Green
+  Yellow
+  Blue
+  Magenta
+  Cyan
+  White
+
+  Same colors lighter versions */
 
 static const char *colorname[] = {
-  "#282c34",
-  "#E06C75",
-  "#98C379",
-  "#E5C07B",
-  "#61AFEF",
-  "#C678DD",
-  "#56B6C2",
-  "#ABB2BF",
+  /*
+    One Dark
+    "#282c34",
+    "#E06C75",
+    "#98C379",
+    "#E5C07B",
+    "#61AFEF",
+    "#C678DD",
+    "#56B6C2",
+    "#ABB2BF",
 
-  "#4b5263",
-  /*"#3E4452",*/
-  "#BE5046",
-  "#98C379",
-  "#D19A66",
-  "#61AFEF",
-  "#C678DD",
-  "#56B6C2",
-  "#ABB2BF"
+    "#4b5263",
+    "#BE5046",
+    "#98C379",
+    "#D19A66",
+    "#61AFEF",
+    "#C678DD",
+    "#56B6C2",
+    "#ABB2BF"*/
+
+  "#212121",
+  "#F51818",
+  "#86B300",
+  "#FF9940",
+  "#399EE6",
+  "#A37ACC",
+  "#55B4D4",
+  "#FAFAFA",
+
+  "#575F66",
+  "#F51818",
+  "#86B300",
+  "#FF9940",
+  "#399EE6",
+  "#A37ACC",
+  "#55B4D4",
+  "#FAFAFA"
 };
 
 
@@ -135,10 +156,10 @@ static const char *colorname[] = {
  * foreground, background, cursor, reverse cursor
  */
 
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
-static unsigned int defaultcs = 7;
-static unsigned int defaultrcs = 0;
+unsigned int defaultfg = 8;
+unsigned int defaultbg = 7;
+static unsigned int defaultcs = 3;
+static unsigned int defaultrcs = 3;
 
 /*
  * Default shape of cursor
@@ -181,9 +202,9 @@ static uint forcemousemod = ShiftMask;
  * Beware that overloading Button1 will disable the selection.
  */
 static MouseShortcut mshortcuts[] = {
-	/* mask                 button   function        argument       release */
-	{ XK_NO_MOD,           Button4,	kscrollup,		{.i = -1} },
-	{ XK_NO_MOD,           Button5,	kscrolldown,	{.s = -1} },
+  /* mask                 button   function        argument       release */
+  { XK_NO_MOD,           Button4,	kscrollup,		{.i = -1} },
+  { XK_NO_MOD,           Button5,	kscrolldown,	{.s = -1} },
 };
 
 /* Internal keyboard shortcuts. */
